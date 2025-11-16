@@ -16,13 +16,6 @@ export function About() {
     threshold: 0.1,
   })
 
-  const stats = [
-    { number: '500+', label: 'Sesiuni Fotografice' },
-    { number: '10+', label: 'Ani Experiență' },
-    { number: '95%', label: 'Clienți Satisfăcuți' },
-    { number: '4.9⭐', label: 'Rating Mediu' },
-  ]
-
   const expertise = [
     'Fotografie de Nuntă',
     'Portrete Profesionale',
@@ -83,7 +76,7 @@ export function About() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-3xl font-bold mb-4">Bună, Sunt O Pasionată Fotograf</h3>
+              <h3 className="text-3xl font-bold mb-4">Bună, eu sunt Darius</h3>
               <p className="text-foreground/70 leading-relaxed text-lg mb-4">
                 Cu peste 10 ani de experiență, mă dedic artei de a captura momente unice și pline de emoție. Specialitatea mea este transformarea clienților în vedete ale propriilor lor povești, creând imagini care durează o viață.
               </p>
@@ -118,27 +111,6 @@ export function About() {
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-20 border-t border-accent/20"
-        >
-          {stats.map((stat, idx) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.4, delay: 0.6 + idx * 0.1 }}
-              className="text-center"
-            >
-              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
-                {stat.number}
-              </div>
-              <p className="text-foreground/60 text-sm">{stat.label}</p>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   )

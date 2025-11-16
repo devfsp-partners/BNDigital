@@ -1,0 +1,158 @@
+"use client";
+
+import { ChevronDown } from "lucide-react";
+import { motion } from "motion/react";
+
+import { Button } from "@/components/ui/button";
+import { ThreeDMarquee } from "@/components/ui/3d-marquee";
+
+export default function ThreeDMarqueeDemoSecond() {
+  const heroImages = [
+    "/wedding-photography-bride-and-groom-at-sunset.jpg",
+    "/professional-portrait-headshot-studio-lighting.jpg",
+    "/event-photography-crowd-dancing-celebration.jpg",
+    "/corporate-event-photography-business-conference.jpg",
+    "/wedding-photography-ceremony-emotional-moment.jpg",
+    "/portrait-photography-woman-natural-lighting.jpg",
+    "/event-photography-candid-guests-laughing.jpg",
+    "/wedding-photography-details-rings-flowers.jpg",
+    "/professional-headshot-man-business-suit.jpg",
+    "/wedding-photography-first-dance-elegant.jpg",
+    "/event-photography-banquet-table-setup.jpg",
+    "/portrait-photography-artistic-creative-styling.jpg",
+  ];
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <section
+      id="hero"
+      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-black pt-24 pb-12"
+    >
+      {/* Background marquee */}
+      <ThreeDMarquee
+        className="pointer-events-none absolute inset-0 h-full w-full"
+        images={heroImages}
+      />
+
+      {/* Dark overlay over images */}
+      <div className="absolute inset-0 z-10 h-full w-full bg-black/80 dark:bg-black/60" />
+
+      {/* Top navigation */}
+      <nav className="fixed left-0 right-0 top-0 z-40 flex items-center justify-between border-b border-accent/10 bg-black/60 px-6 py-6 backdrop-blur-md md:px-12">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="bg-gradient-to-r from-accent via-accent/80 to-accent bg-clip-text text-2xl font-bold text-transparent"
+        >
+          BNDigital
+        </motion.div>
+        <div className="hidden gap-8 text-sm font-medium md:flex">
+          {["Servicii", "Portofoliu", "Contact"].map((item, idx) => (
+            <motion.button
+              key={item}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1 }}
+              onClick={() => scrollToSection(item.toLowerCase())}
+              className="group relative text-foreground/80 transition-colors hover:text-accent"
+            >
+              {item}
+              <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full" />
+            </motion.button>
+          ))}
+        </div>
+      </nav>
+
+      {/* Hero content */}
+      <div className="relative z-20 mx-auto w-full max-w-6xl px-6 pt-10">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-6 text-center"
+        >
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
+            className="mx-auto mb-3 text-accent text-lg font-semibold tracking-widest uppercase"
+          >
+            BNDigital
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-balance text-4xl font-extrabold leading-tight text-white md:text-6xl lg:text-7xl"
+          >
+            Tot ce ai nevoie pentru o{" "}
+            <span className="relative z-20 inline-block rounded-xl bg-orange-400/40 px-4 py-1 text-white underline decoration-orange-300 decoration-[6px] underline-offset-[16px] backdrop-blur-sm">
+              prezență
+            </span>{" "}
+            vizuală puternică.
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="mx-auto max-w-3xl text-balance text-sm font-light text-neutral-200 md:text-base"
+          >
+            Fotografie, branding și social media lucrate împreună pentru a crea o identitate clară și
+            o comunicare care te diferențiază.
+          </motion.p>
+
+          {/* <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.75 }}
+            className="mx-auto max-w-3xl text-balance text-xs font-light text-neutral-300 md:text-sm"
+          >
+            Aceasta este viața ta și se sfârșește câte un moment pe rând. Nu ești jobul tău, nu ești
+            banii pe care îi ai în bancă. Nu ești mașina pe care o conduci și nici conținutul
+            portofelului tău.
+          </motion.p> */}
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="mb-10 flex flex-col justify-center gap-4 sm:flex-row"
+          >
+            <Button
+              size="lg"
+              className="rounded-lg bg-accent px-8 py-6 text-base font-semibold text-black hover:bg-accent/90"
+              onClick={() => scrollToSection("contact")}
+            >
+              Contactează-ne
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-lg border-2 border-accent px-8 py-6 text-base font-semibold text-accent hover:bg-accent/10"
+              onClick={() => scrollToSection("portfolio")}
+            >
+              Portofoliu
+            </Button>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 transform cursor-pointer"
+        onClick={() => scrollToSection("about")}
+      >
+        <ChevronDown size={32} className="text-accent" />
+      </motion.div>
+    </section>
+  );
+}
+
