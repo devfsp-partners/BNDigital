@@ -107,7 +107,7 @@ export function About() {
               className="bg-accent text-black hover:bg-accent/90 font-semibold px-8 py-6 rounded-lg w-full sm:w-auto"
               onClick={() => scrollToSection('contact')}
             >
-              Discutează Proiectul Tău
+              Contactează-ne
             </Button>
           </motion.div>
         </div>
