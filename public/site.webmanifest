@@ -1,0 +1,23 @@
+{
+  "name": "BNDigital - Agenție de Marketing Digital",
+  "short_name": "BNDigital",
+  "description": "Agenție de marketing digital din Satu Mare: social media, reclame Meta & Google, fotografie și video, website-uri și branding.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

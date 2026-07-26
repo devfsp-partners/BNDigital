@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card'
 import { Camera, Share2, Megaphone, Globe, Palette, ArrowRight } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useInView } from 'react-intersection-observer'
+import { scrollToSectionOrNavigate } from '@/lib/utils'
 
 export function Services() {
   const { ref, inView } = useInView({
@@ -55,10 +56,7 @@ export function Services() {
     },
   ]
 
-  const scrollToContact = () => {
-    const element = document.getElementById('contact')
-    element?.scrollIntoView({ behavior: 'smooth' })
-  }
+  const scrollToContact = () => scrollToSectionOrNavigate('contact', '/contact')
 
   return (
     <section 

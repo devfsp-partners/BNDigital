@@ -4,12 +4,10 @@ import { Button } from '@/components/ui/button'
 import { motion } from 'motion/react'
 import { useInView } from 'react-intersection-observer'
 import { CheckCircle2 } from 'lucide-react'
+import { scrollToSectionOrNavigate } from '@/lib/utils'
 
 export function About() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
-    element?.scrollIntoView({ behavior: 'smooth' })
-  }
+  const scrollToSection = (id: string) => scrollToSectionOrNavigate(id, '/contact')
 
   const { ref, inView } = useInView({
     triggerOnce: true,

@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'motion/react'
 import { useInView } from 'react-intersection-observer'
 
@@ -11,18 +12,18 @@ export function Footer() {
   })
 
   const footerLinks = [
-    { label: 'Social Media Management', href: '#services' },
-    { label: 'Reclame Meta & Google Ads', href: '#services' },
-    { label: 'Fotografie și Video', href: '#services' },
-    { label: 'Website-uri', href: '#services' },
-    { label: 'Branding și Strategie', href: '#services' },
+    { label: 'Social Media Management', href: '/servicii' },
+    { label: 'Reclame Meta & Google Ads', href: '/servicii' },
+    { label: 'Fotografie și Video', href: '/servicii' },
+    { label: 'Website-uri', href: '/servicii' },
+    { label: 'Branding și Strategie', href: '/servicii' },
   ]
 
   const navLinks = [
-    { label: 'Despre', href: '#about' },
-    { label: 'Servicii', href: '#services' },
-    { label: 'Portofoliu', href: '#portfolio' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Despre', href: '/despre' },
+    { label: 'Servicii', href: '/servicii' },
+    { label: 'Portofoliu', href: '/portofoliu' },
+    { label: 'Contact', href: '/contact' },
   ]
 
   const socialLinks = [
@@ -65,12 +66,12 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.label}>
-                  <a 
+                  <Link 
                     href={link.href} 
                     className="text-foreground/70 hover:text-accent transition-colors text-sm"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -86,12 +87,12 @@ export function Footer() {
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.label}>
-                  <a 
+                  <Link 
                     href={link.href} 
                     className="text-foreground/70 hover:text-accent transition-colors text-sm"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
