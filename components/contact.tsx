@@ -3,9 +3,19 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { Phone, Mail, MessageCircle, Instagram, Facebook, Check } from 'lucide-react'
+import { Phone, Mail, MessageCircle, Instagram, Facebook, Check, Loader2 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { toast } from 'sonner'
+
+const SERVICE_LABELS: Record<string, string> = {
+  smm: 'Social Media Management',
+  ads: 'Reclame Meta & Google Ads',
+  'photo-video': 'Fotografie și Video',
+  website: 'Website-uri și Landing Pages',
+  branding: 'Branding și Strategie',
+  other: 'Altele',
+}
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -14,7 +24,7 @@ export function Contact() {
     service: 'smm',
     message: '',
   })
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -27,13 +37,46 @@ export function Contact() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({ name: '', email: '', service: 'smm', message: '' })
-    }, 3000)
+    setStatus('sending')
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: '410d854f-d7d8-4a0e-a277-61401f351d0f',
+          subject: `Mesaj nou de pe bndigital.ro - ${SERVICE_LABELS[formData.service] ?? formData.service}`,
+          from_name: 'Formular de Contact - BNDigital',
+          name: formData.name,
+          email: formData.email,
+          serviciu_interesat: SERVICE_LABELS[formData.service] ?? formData.service,
+          message: formData.message,
+        }),
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setStatus('success')
+        setFormData({ name: '', email: '', service: 'smm', message: '' })
+        toast.success('Mesaj trimis cu succes!', {
+          description: 'Îți răspundem în maxim 24 de ore.',
+        })
+        setTimeout(() => setStatus('idle'), 4000)
+      } else {
+        setStatus('error')
+        toast.error('Mesajul nu a putut fi trimis.', {
+          description: 'Te rugăm încearcă din nou sau scrie-ne pe WhatsApp.',
+        })
+      }
+    } catch {
+      setStatus('error')
+      toast.error('Mesajul nu a putut fi trimis.', {
+        description: 'Te rugăm încearcă din nou sau scrie-ne pe WhatsApp.',
+      })
+    }
   }
 
   const contactInfo = [
@@ -196,17 +239,28 @@ export function Contact() {
               >
                 <Button 
                   type="submit"
-                  className="w-full bg-accent text-black hover:bg-accent/90 text-base font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-all"
+                  disabled={status === 'sending'}
+                  className="w-full bg-accent text-black hover:bg-accent/90 text-base font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-all disabled:opacity-60"
                 >
-                  {submitted ? (
+                  {status === 'sending' && (
+                    <>
+                      <Loader2 size={20} className="animate-spin" /> Se trimite...
+                    </>
+                  )}
+                  {status === 'success' && (
                     <>
                       <Check size={20} /> Trimis cu Succes!
                     </>
-                  ) : (
-                    'Trimite Mesaj'
                   )}
+                  {(status === 'idle' || status === 'error') && 'Trimite Mesaj'}
                 </Button>
               </motion.div>
+
+              {status === 'error' && (
+                <p className="text-destructive text-sm text-center">
+                  A apărut o eroare. Te rugăm încearcă din nou sau scrie-ne direct pe WhatsApp.
+                </p>
+              )}
             </form>
           </motion.div>
 

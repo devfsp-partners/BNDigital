@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { Toaster } from '@/components/ui/sonner'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -42,6 +43,7 @@ export default function RootLayout({
       </head>
       <body className={`font-sans antialiased ${_playfair.variable}`}>
         {children}
+        <Toaster theme="dark" richColors position="top-center" />
         <Analytics />
       </body>
     </html>
