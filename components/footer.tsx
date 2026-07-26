@@ -106,9 +106,11 @@ export function Footer() {
           >
             <h4 className="font-semibold text-foreground mb-4">Legal</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-foreground/70 hover:text-accent transition-colors text-sm">Politica Confidențialității</a></li>
-              <li><a href="#" className="text-foreground/70 hover:text-accent transition-colors text-sm">Termeni și Condiții</a></li>
-              <li><a href="#" className="text-foreground/70 hover:text-accent transition-colors text-sm">Cookies</a></li>
+              <li>
+                <Link href="/politica-de-confidentialitate" className="text-foreground/70 hover:text-accent transition-colors text-sm">
+                  Politica Confidențialității
+                </Link>
+              </li>
             </ul>
           </motion.div>
         </div>
