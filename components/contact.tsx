@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { Phone, Mail, MapPin, MessageCircle, Instagram, Facebook, Check } from 'lucide-react'
+import { Phone, Mail, MessageCircle, Instagram, Facebook, Check } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
@@ -11,7 +11,7 @@ export function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    service: 'photography',
+    service: 'smm',
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
@@ -32,16 +32,16 @@ export function Contact() {
     setSubmitted(true)
     setTimeout(() => {
       setSubmitted(false)
-      setFormData({ name: '', email: '', service: 'photography', message: '' })
+      setFormData({ name: '', email: '', service: 'smm', message: '' })
     }, 3000)
   }
 
   const contactInfo = [
     {
       icon: Phone,
-      label: 'Telefon',
-      value: '+40 XXX XXX XXX',
-      href: 'tel:+40XXXXXXXXX',
+      label: 'Telefon / WhatsApp',
+      value: '+40 734 837 002',
+      href: 'tel:+40734837002',
     },
     {
       icon: Mail,
@@ -50,10 +50,10 @@ export function Contact() {
       href: 'mailto:contact@bndigital.ro',
     },
     {
-      icon: MapPin,
-      label: 'Locație',
-      value: 'Satu Mare, România',
-      href: '#',
+      icon: Instagram,
+      label: 'Instagram',
+      value: '@bndigital.ro',
+      href: 'https://www.instagram.com/bndigital.ro/',
     },
   ]
 
@@ -78,11 +78,11 @@ export function Contact() {
             Să Vorbim Despre
             <br />
             <span className="bg-gradient-to-r from-accent via-accent/80 to-accent bg-clip-text text-transparent">
-              Proiectul Tău
+              Afacerea Ta
             </span>
           </h2>
           <p className="text-foreground/70 text-xl max-w-2xl mx-auto">
-            Suntem gata să transformi visurile tale în realitate
+            Suntem gata să te ajutăm să fii mai vizibil și să atragi mai mulți clienți
           </p>
         </motion.div>
 
@@ -111,6 +111,8 @@ export function Contact() {
                   <h3 className="text-lg font-semibold text-foreground mb-2">{info.label}</h3>
                   <a 
                     href={info.href}
+                    target={info.href.startsWith('http') ? '_blank' : undefined}
+                    rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="text-foreground/70 hover:text-accent transition-colors break-all font-medium"
                   >
                     {info.value}
@@ -166,9 +168,11 @@ export function Contact() {
                   onChange={handleChange}
                   className="w-full bg-black border border-accent/20 hover:border-accent/50 focus:border-accent rounded-lg px-4 py-3 text-foreground focus:outline-none transition-colors"
                 >
-                  <option value="photography">Fotografie Profesională</option>
-                  <option value="smm">Management Social Media</option>
-                  <option value="branding">Branding & Design</option>
+                  <option value="smm">Social Media Management</option>
+                  <option value="ads">Reclame Meta & Google Ads</option>
+                  <option value="photo-video">Fotografie și Video</option>
+                  <option value="website">Website-uri și Landing Pages</option>
+                  <option value="branding">Branding și Strategie</option>
                   <option value="other">Altele</option>
                 </select>
               </div>
@@ -216,9 +220,9 @@ export function Contact() {
             
             <div className="space-y-4 mb-8">
               {[
-                { icon: MessageCircle, label: 'WhatsApp', text: 'Contactează-mă direct', url: 'https://wa.me/40XXXXXXXXX' },
-                { icon: Instagram, label: 'Instagram', text: '@bndigital - Vezi portofoliul live', url: 'https://instagram.com/bndigital' },
-                { icon: Facebook, label: 'Facebook', text: 'BNDigital - Fotografie & Branding', url: 'https://facebook.com/bndigital' },
+                { icon: MessageCircle, label: 'WhatsApp', text: 'Scrie-ne direct pe WhatsApp', url: 'https://wa.me/40734837002' },
+                { icon: Instagram, label: 'Instagram', text: '@bndigital.ro - Vezi lucrările noastre', url: 'https://www.instagram.com/bndigital.ro/' },
+                { icon: Facebook, label: 'Facebook', text: 'BNDigital - Agenție de Marketing Digital', url: 'https://www.facebook.com/profile.php?id=61554284195201' },
               ].map((method, idx) => {
                 const Icon = method.icon
                 return (
@@ -249,9 +253,9 @@ export function Contact() {
               whileHover={{ scale: 1.02 }}
               className="p-6 bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/30 rounded-lg"
             >
-              <h4 className="font-semibold text-foreground mb-2">Program de Consultație</h4>
+              <h4 className="font-semibold text-foreground mb-2">Timp de Răspuns</h4>
               <p className="text-foreground/70 text-sm leading-relaxed">
-                Disponibil pentru consultații prin telefon, video call sau întâlniri în persoană. Răspund la mesaje în termen de 24 de ore.
+                Suntem disponibili pentru consultații prin telefon, WhatsApp sau întâlniri în persoană. Răspundem la mesaje în termen de 24 de ore.
               </p>
             </motion.div>
           </motion.div>

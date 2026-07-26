@@ -15,28 +15,28 @@ export function FAQ() {
 
   const faqs = [
     {
-      question: 'Care este durata tipică a unei sesiuni fotografice?',
-      answer: 'Durata unei sesiuni depinde de tipul fotografiei. Sesiile de portrete durează obicei 1-2 ore, nuntele 8-10 ore, iar evenimentele corporate 4-6 ore. Putem discuta despre necesitățile specifice și să ajustez oferta în consecință.',
+      question: 'Ce este inclus în serviciul de social media management?',
+      answer: 'Ne ocupăm complet de paginile tale: stabilim un plan lunar de postări, creăm design-ul grafic și textele, filmăm și edităm Reels și Story-uri, publicăm conform calendarului, răspundem la comentarii și mesaje și îți trimitem lunar un raport cu rezultatele.',
     },
     {
-      question: 'Cât timp durează livrarea fotografiilor editate?',
-      answer: 'Obicei, fotografiile sunt editate și livrate în 7-10 zile lucrătoare. Pentru proiecte urgente, ofenim opțiuni de livrare accelerată cu o taxă suplimentară.',
+      question: 'Care este diferența dintre bugetul de reclame și taxa de administrare?',
+      answer: 'Bugetul de reclame merge direct către Meta sau Google pentru afișarea anunțurilor, iar taxa de administrare acoperă munca noastră: strategie, targetare, materiale, configurare campanii și optimizare continuă. Îți trimitem rapoarte clare pentru ambele.',
     },
     {
-      question: 'Oferiți pachete personalizate?',
-      answer: 'Da, absolut! Fiecare client este unic și fiecare proiect este diferit. Creez pachete personalizate care se potrivesc bugetului și necesităților tale. Contactează-mă pentru o consultație.',
+      question: 'Cât durează până văd primele rezultate?',
+      answer: 'Pentru reclame, primele rezultate apar de obicei în 1-2 săptămâni de la lansare. Pentru social media organic, o creștere vizibilă a engagement-ului apare de regulă în 4-8 săptămâni de postări constante. Website-urile sunt livrate, în funcție de complexitate, în 2-4 săptămâni.',
     },
     {
-      question: 'Cum funcționează reviziile și modificările?',
-      answer: 'Reviziile sunt incluse în pachetul standard. Putem ajusta editarea fotografiilor, retușurile și alte detalii. Modificări majore pot implica costuri suplimentare, pe care le discutăm în prealabil.',
+      question: 'Trebuie să vă ofer eu poze sau texte pentru site și postări?',
+      answer: 'Nu este obligatoriu. Realizăm noi fotografiile și materialele video la locația ta sau în studio și scriem textele pentru site și postări. Tu ne spui povestea afacerii tale, restul ne ocupăm noi.',
     },
     {
-      question: 'Puteți lucra în locuri externe sau doar în studio?',
-      answer: 'Lucrez atât în studio, cât și în locații externe. De fapt, prefer sesiunile outdoor pentru portrete și cupluri. Pot veni la locația ta sau găsim un loc frumos împreună.',
+      question: 'Construiți și website-uri, nu doar conținut pentru social media?',
+      answer: 'Da. Construim website-uri de prezentare și pagini dedicate campaniilor, cu fotografii reale ale afacerii tale, optimizate pentru mobil, cu formular de contact, buton de WhatsApp și conectate la Google Analytics și Meta Pixel.',
     },
     {
-      question: 'Ce se include în serviciile de social media management?',
-      answer: 'Serviciile includ: creare conținut, planificare editorială, gestionare canale, analiză performanță și rapoarte lunare. Putem personaliza pachetele în funcție de necesitățile tale.',
+      question: 'Lucrați doar cu afaceri din Satu Mare?',
+      answer: 'Nu, colaborăm cu afaceri din toată țara. Ședințele foto/video se organizează la locația ta, iar restul colaborării — social media, reclame, website, branding — se desfășoară online, indiferent de oraș.',
     },
   ]
 

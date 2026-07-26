@@ -17,12 +17,12 @@ export function About() {
   })
 
   const expertise = [
-    'Fotografie de Nuntă',
-    'Portrete Profesionale',
-    'Evenimente Corporate',
-    'Branding & Design',
     'Social Media Management',
-    'Retuș & Editare',
+    'Reclame Meta & Google Ads',
+    'Fotografie & Video',
+    'Website-uri & Landing Pages',
+    'Branding & Identitate Vizuală',
+    'Strategie & Consultanță',
   ]
 
   return (
@@ -41,12 +41,12 @@ export function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <p className="text-accent text-lg font-semibold mb-3 tracking-widest uppercase">Despre Mine</p>
+          <p className="text-accent text-lg font-semibold mb-3 tracking-widest uppercase">Despre BNDigital</p>
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
-            Povesti Fotografice
+            Partenerul Tău
             <br />
             <span className="bg-gradient-to-r from-accent via-accent/80 to-accent bg-clip-text text-transparent">
-              Pline de Emoție
+              de Marketing Digital
             </span>
           </h2>
         </motion.div>
@@ -60,12 +60,12 @@ export function About() {
             className="relative h-96 lg:h-full min-h-96 rounded-2xl overflow-hidden shadow-2xl group"
           >
             <img
-              src="/professional-photographer-woman-in-studio-with-cam.jpg"
-              alt="Fotograf profesionist"
+              src="/images/portfolio/restaurant/mancare-1.jpg"
+              alt="Fotografie profesională realizată de BNDigital pentru un client din HoReCa"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-              <p className="text-white text-lg font-semibold">Pasionată pentru Arta Fotografiei</p>
+              <p className="text-white text-lg font-semibold">Lucrări reale, pentru clienți reali</p>
             </div>
           </motion.div>
 
@@ -76,12 +76,15 @@ export function About() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-3xl font-bold mb-4">Bună, eu sunt Darius</h3>
+              <h3 className="text-3xl font-bold mb-4">O agenție dedicată afacerilor locale</h3>
               <p className="text-foreground/70 leading-relaxed text-lg mb-4">
-                Cu peste 10 ani de experiență, mă dedic artei de a captura momente unice și pline de emoție. Specialitatea mea este transformarea clienților în vedete ale propriilor lor povești, creând imagini care durează o viață.
+                BNDigital este o agenție de marketing digital specializată în promovarea afacerilor locale și a firmelor mici și mijlocii. Ne ocupăm de prezența online a clienților noștri: pagini de social media, reclame plătite, fotografie și video, website-uri și branding.
+              </p>
+              <p className="text-foreground/70 leading-relaxed text-lg mb-4">
+                Scopul colaborării cu noi este simplu: afacerea ta să fie mai vizibilă, să atragă mai mulți clienți și să aibă o imagine profesională.
               </p>
               <p className="text-foreground/70 leading-relaxed text-lg">
-                Oferim servicii complete: fotografie de nuntă, portrete profesionale, evenimente corporate, branding și management de social media. Fiecare proiect este o oportunitate de a crea ceva extraordinar și unic.
+                Lucrăm cu restaurante și cafenele, saloane de înfrumusețare, clinici și cabinete medicale, magazine locale, firme de construcții, producători, companii B2B și profesioniști independenți.
               </p>
             </div>
 

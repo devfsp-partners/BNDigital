@@ -8,31 +8,22 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 const _playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfair' });
 
 export const metadata: Metadata = {
-  title: 'BNDigital - Fotograf Profesionist Satu Mare | Nuntă, Portrete, Evenimente',
-  description: 'Fotograf profesionist în Satu Mare. Servicii de fotografie pentru nuntă, portrete și evenimente. Management social media și branding incluse.',
+  title: 'BNDigital - Agenție de Marketing Digital Satu Mare',
+  description: 'BNDigital este o agenție de marketing digital din Satu Mare specializată în social media, reclame Meta & Google, fotografie și video, website-uri și branding pentru afaceri locale.',
   generator: 'v0.app',
-  keywords: ['fotograf', 'Satu Mare', 'nuntă', 'portrete', 'fotografie profesională', 'branding'],
+  keywords: ['agenție de marketing', 'marketing digital', 'Satu Mare', 'social media management', 'reclame Meta Ads', 'reclame Google Ads', 'fotografie și video', 'website-uri', 'branding'],
   authors: [{ name: 'BNDigital' }],
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon-192.png', sizes: '192x192', type: 'image/png' },
     ],
-    apple: '/apple-icon.png',
+    apple: '/favicon-192.png',
   },
   openGraph: {
-    title: 'BNDigital - Fotograf Profesionist',
-    description: 'Fotografie de calitate pentru nuntă, portrete și evenimente în Satu Mare',
+    title: 'BNDigital - Agenție de Marketing Digital',
+    description: 'Social media, reclame plătite, fotografie & video, website-uri și branding pentru afaceri din Satu Mare și din toată țara.',
     type: 'website',
     locale: 'ro_RO',
   },

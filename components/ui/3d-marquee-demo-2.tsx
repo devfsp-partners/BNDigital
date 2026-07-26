@@ -8,18 +8,25 @@ import { ThreeDMarquee } from "@/components/ui/3d-marquee";
 
 export default function ThreeDMarqueeDemoSecond() {
   const heroImages = [
-    "/wedding-photography-bride-and-groom-at-sunset.jpg",
-    "/professional-portrait-headshot-studio-lighting.jpg",
-    "/event-photography-crowd-dancing-celebration.jpg",
-    "/corporate-event-photography-business-conference.jpg",
-    "/wedding-photography-ceremony-emotional-moment.jpg",
-    "/portrait-photography-woman-natural-lighting.jpg",
-    "/event-photography-candid-guests-laughing.jpg",
-    "/wedding-photography-details-rings-flowers.jpg",
-    "/professional-headshot-man-business-suit.jpg",
-    "/wedding-photography-first-dance-elegant.jpg",
-    "/event-photography-banquet-table-setup.jpg",
-    "/portrait-photography-artistic-creative-styling.jpg",
+    "/images/portfolio/restaurant/mancare-1.jpg",
+    "/images/portfolio/medical/cabinet-1.jpg",
+    "/images/portfolio/produse/produs-1.jpg",
+    "/images/portfolio/social/design-1.jpg",
+    "/images/portfolio/restaurant/bautura-1.jpg",
+    "/images/portfolio/medical/medic-1.jpg",
+    "/images/portfolio/produse/produs-2.jpg",
+    "/images/portfolio/social/design-2.jpg",
+    "/images/portfolio/restaurant/mancare-2.jpg",
+    "/images/portfolio/medical/cabinet-2.jpg",
+    "/images/portfolio/produse/produs-3.jpg",
+    "/images/portfolio/social/design-3.jpg",
+  ];
+
+  const navItems = [
+    { label: "Despre", id: "about" },
+    { label: "Servicii", id: "services" },
+    { label: "Portofoliu", id: "portfolio" },
+    { label: "Contact", id: "contact" },
   ];
 
   const scrollToSection = (id: string) => {
@@ -42,25 +49,30 @@ export default function ThreeDMarqueeDemoSecond() {
       <div className="absolute inset-0 z-10 h-full w-full bg-black/80 dark:bg-black/60" />
 
       {/* Top navigation */}
-      <nav className="fixed left-0 right-0 top-0 z-40 flex items-center justify-between border-b border-accent/10 bg-black/60 px-6 py-6 backdrop-blur-md md:px-12">
-        <motion.div
+      <nav className="fixed left-0 right-0 top-0 z-40 flex items-center justify-between border-b border-accent/10 bg-black/60 px-6 py-4 backdrop-blur-md md:px-12">
+        <motion.button
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-gradient-to-r from-accent via-accent/80 to-accent bg-clip-text text-2xl font-bold text-transparent"
+          onClick={() => scrollToSection("hero")}
+          className="flex items-center"
         >
-          BNDigital
-        </motion.div>
+          <img
+            src="/logo/bndigital-logo-alb.svg"
+            alt="BNDigital"
+            className="h-8 w-auto md:h-9"
+          />
+        </motion.button>
         <div className="hidden gap-8 text-sm font-medium md:flex">
-          {["Servicii", "Portofoliu", "Contact"].map((item, idx) => (
+          {navItems.map((item, idx) => (
             <motion.button
-              key={item}
+              key={item.id}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
-              onClick={() => scrollToSection(item.toLowerCase())}
+              onClick={() => scrollToSection(item.id)}
               className="group relative text-foreground/80 transition-colors hover:text-accent"
             >
-              {item}
+              {item.label}
               <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full" />
             </motion.button>
           ))}
@@ -81,7 +93,7 @@ export default function ThreeDMarqueeDemoSecond() {
             transition={{ delay: 0.15 }}
             className="mx-auto mb-3 text-accent text-lg font-semibold tracking-widest uppercase"
           >
-            BNDigital
+            Agenție de Marketing Digital
           </motion.p>
 
           <motion.h1
@@ -92,9 +104,9 @@ export default function ThreeDMarqueeDemoSecond() {
           >
             Tot ce ai nevoie pentru o{" "}
             <span className="relative z-20 inline-block rounded-xl bg-orange-400/40 px-4 py-1 text-white underline decoration-orange-300 decoration-[6px] underline-offset-[16px] backdrop-blur-sm">
-              prezență
+              prezență online
             </span>{" "}
-            vizuală puternică.
+            puternică.
           </motion.h1>
 
           <motion.p
@@ -103,20 +115,10 @@ export default function ThreeDMarqueeDemoSecond() {
             transition={{ delay: 0.6 }}
             className="mx-auto max-w-3xl text-balance text-sm font-light text-neutral-200 md:text-base"
           >
-            Fotografie, branding și social media lucrate împreună pentru a crea o identitate clară și
-            o comunicare care te diferențiază.
+            Social media, reclame Meta &amp; Google Ads, fotografie și video, website-uri și branding —
+            toate lucrate împreună ca afacerea ta să fie mai vizibilă, să atragă mai mulți clienți și
+            să aibă o imagine profesională.
           </motion.p>
-
-          {/* <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.75 }}
-            className="mx-auto max-w-3xl text-balance text-xs font-light text-neutral-300 md:text-sm"
-          >
-            Aceasta este viața ta și se sfârșește câte un moment pe rând. Nu ești jobul tău, nu ești
-            banii pe care îi ai în bancă. Nu ești mașina pe care o conduci și nici conținutul
-            portofelului tău.
-          </motion.p> */}
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -135,9 +137,9 @@ export default function ThreeDMarqueeDemoSecond() {
               size="lg"
               variant="outline"
               className="rounded-lg border-2 border-accent px-8 py-6 text-base font-semibold text-accent hover:bg-accent/10"
-              onClick={() => scrollToSection("portfolio")}
+              onClick={() => scrollToSection("services")}
             >
-              Portofoliu
+              Servicii
             </Button>
           </motion.div>
         </motion.div>

@@ -11,21 +11,23 @@ export function Footer() {
   })
 
   const footerLinks = [
-    { label: 'Fotografie', href: '#services' },
-    { label: 'Social Media', href: '#services' },
-    { label: 'Branding', href: '#services' },
+    { label: 'Social Media Management', href: '#services' },
+    { label: 'Reclame Meta & Google Ads', href: '#services' },
+    { label: 'Fotografie și Video', href: '#services' },
+    { label: 'Website-uri', href: '#services' },
+    { label: 'Branding și Strategie', href: '#services' },
   ]
 
   const navLinks = [
     { label: 'Despre', href: '#about' },
+    { label: 'Servicii', href: '#services' },
     { label: 'Portofoliu', href: '#portfolio' },
     { label: 'Contact', href: '#contact' },
   ]
 
   const socialLinks = [
-    { label: 'Instagram', href: '#' },
-    { label: 'Facebook', href: '#' },
-    { label: 'LinkedIn', href: '#' },
+    { label: 'Instagram', href: 'https://www.instagram.com/bndigital.ro/' },
+    { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61554284195201' },
   ]
 
   return (
@@ -43,11 +45,13 @@ export function Footer() {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-accent via-accent/80 to-accent bg-clip-text text-transparent mb-4">
-              BNDigital
-            </h3>
+            <img
+              src="/logo/bndigital-logo-alb.svg"
+              alt="BNDigital"
+              className="h-8 w-auto mb-4"
+            />
             <p className="text-foreground/70 text-sm leading-relaxed">
-              Fotografie profesională și servicii de branding în Satu Mare, România.
+              Agenție de marketing digital: social media, reclame plătite, fotografie și video, website-uri și branding pentru afaceri locale.
             </p>
           </motion.div>
 
@@ -122,6 +126,8 @@ export function Footer() {
                 <motion.a
                   key={link.label}
                   href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ color: 'var(--accent)', scale: 1.1 }}
                   className="hover:text-accent transition-colors"
                 >

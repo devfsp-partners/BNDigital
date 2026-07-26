@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { Camera, Share2, Palette, ArrowRight } from 'lucide-react'
+import { Camera, Share2, Megaphone, Globe, Palette, ArrowRight } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useInView } from 'react-intersection-observer'
 
@@ -14,28 +14,44 @@ export function Services() {
 
   const services = [
     {
-      id: 'photography',
-      title: 'Fotografie Profesională',
-      description: 'Servicii complete de fotografie pentru nuntă, portrete, evenimente corporate și sesiuni personalizate. Calitate 4K, editare profesională și livrare rapidă.',
-      icon: Camera,
-      categories: ['Nuntă', 'Portrete', 'Evenimente', 'Corporate'],
+      id: 'smm',
+      title: 'Social Media Management',
+      description: 'Ne ocupăm complet de paginile tale de Instagram, Facebook, TikTok sau LinkedIn: plan lunar de postări, design grafic, texte, Reels și Story-uri, publicare și răspuns la comentarii și mesaje.',
+      icon: Share2,
+      categories: ['Instagram', 'Facebook', 'TikTok', 'Reels'],
       delay: 0,
     },
     {
-      id: 'smm',
-      title: 'Management Social Media',
-      description: 'Creație de conținut, planing editorial și gestionare profesională a canalelor tale de social media pentru a crește audiența și engagement-ul brand-ului tău.',
-      icon: Share2,
-      categories: ['Content Creation', 'Planning', 'Gestionare'],
+      id: 'ads',
+      title: 'Reclame Meta & Google Ads',
+      description: 'Creăm și administrăm reclame plătite pe Facebook, Instagram și Google, ca să ajungi în fața oamenilor care au nevoie de produsele sau serviciile tale, în zona în care activezi.',
+      icon: Megaphone,
+      categories: ['Meta Ads', 'Google Ads', 'Targetare', 'Rapoarte'],
       delay: 0.1,
     },
     {
-      id: 'branding',
-      title: 'Branding & Design',
-      description: 'Strategii de branding complete: logo design, identitate vizuală, ghiduri de stil și materiale marketing profesionale pentru consolidarea prezenței tale pe piață.',
-      icon: Palette,
-      categories: ['Logo Design', 'Identitate Vizuală', 'Materiale Marketing'],
+      id: 'photo-video',
+      title: 'Fotografie și Video',
+      description: 'Fotografii și materiale video profesionale, în studioul nostru sau la locația ta, gata de folosit pe social media, în reclame, pe website sau în meniuri și cataloage.',
+      icon: Camera,
+      categories: ['Foto Produs', 'Foto Echipă', 'Video', 'Reels'],
       delay: 0.2,
+    },
+    {
+      id: 'website',
+      title: 'Website-uri și Landing Pages',
+      description: 'Construim website-uri de prezentare și pagini dedicate campaniilor, cu fotografii reale ale afacerii tale, optimizate pentru mobil și conectate la Google Analytics și Meta Pixel.',
+      icon: Globe,
+      categories: ['Design & Dezvoltare', 'Mobil', 'Formular Contact'],
+      delay: 0.3,
+    },
+    {
+      id: 'branding',
+      title: 'Branding și Strategie',
+      description: 'Creăm logo-ul și identitatea vizuală a afacerii tale, definim poziționarea și propunem un plan clar de promovare, bazat pe analiza situației actuale și a concurenței.',
+      icon: Palette,
+      categories: ['Logo & Identitate', 'Poziționare', 'Strategie'],
+      delay: 0.4,
     },
   ]
 
@@ -62,19 +78,19 @@ export function Services() {
         >
           <p className="text-accent text-lg font-semibold mb-3 tracking-widest uppercase">Servicii Complete</p>
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
-            Soluții Profesionale
+            Tot ce Are Nevoie
             <br />
             <span className="bg-gradient-to-r from-accent via-accent/80 to-accent bg-clip-text text-transparent">
-              Pentru Fiecare Viziune
+              Afacerea Ta
             </span>
           </h2>
           <p className="text-foreground/70 text-xl max-w-2xl mx-auto">
-            O gamă completă de servicii pentru a aduce visurile tale la viață
+            O gamă completă de servicii de marketing digital, sub un singur acoperiș
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {services.map((service, idx) => {
             const Icon = service.icon
             return (
@@ -83,6 +99,7 @@ export function Services() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
                 transition={{ duration: 0.6, delay: service.delay }}
+                className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.4rem)]"
               >
                 <Card className="group relative h-full bg-black border border-accent/20 hover:border-accent/60 p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/20">
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
