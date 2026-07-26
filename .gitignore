@@ -31,3 +31,8 @@ coverage/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.tsbuildinfo
+.vercel
+
+# Raw source materials (not needed to run the site; processed copies live in public/)
+materiale_website/
