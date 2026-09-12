@@ -108,7 +108,17 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/politica-de-confidentialitate" className="text-foreground/70 hover:text-accent transition-colors text-sm">
-                  Politica Confidențialității
+                  Politica de confidențialitate
+                </Link>
+              </li>
+              <li>
+                <Link href="/termeni-si-conditii" className="text-foreground/70 hover:text-accent transition-colors text-sm">
+                  Termeni și condiții
+                </Link>
+              </li>
+              <li>
+                <Link href="/politica-de-cookies" className="text-foreground/70 hover:text-accent transition-colors text-sm">
+                  Politica de cookies
                 </Link>
               </li>
             </ul>
