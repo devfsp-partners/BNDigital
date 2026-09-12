@@ -4,7 +4,16 @@ export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = 'https://bndigital.ro'
-  const routes = ['', '/despre', '/servicii', '/portofoliu', '/contact']
+  const routes = [
+    '',
+    '/despre',
+    '/servicii',
+    '/portofoliu',
+    '/contact',
+    '/politica-de-confidentialitate',
+    '/termeni-si-conditii',
+    '/politica-de-cookies',
+  ]
 
   return routes.map((route) => ({
     url: `${siteUrl}${route}`,
